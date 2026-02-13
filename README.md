@@ -17,13 +17,3 @@ Incorporated problem-solving and debugging techniques to handle errors and edge 
 Used version control (Git/GitHub) to manage code changes and collaborate on project development.
 
 Prepared for potential cloud deployment, demonstrating awareness of hybrid-cloud application readiness.
-
-✅ This description:
-
-Highlights programming skills (Python, JavaScript, Flask)
-
-Mentions SDLC, testing, debugging, maintainable code
-
-Uses keywords relevant to IBM (problem-solving, deployment, scalable, responsive)
-
-Shows full-stack capability, which is attractive for entry-level software roles
