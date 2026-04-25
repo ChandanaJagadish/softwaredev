@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Management</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav>
+    <h1>Student Management</h1>
+    <ul>
+      <li><a href="#add">Add Student</a></li>
+      <li><a href="#list">View Students</a></li>
+    </ul>
+  </nav>
+
+  <section id="add">
+    <h2>Add Student</h2>
+    <form id="studentForm">
+      <label>Name:</label>
+      <input type="text" id="name" required>
+      <label>Age:</label>
+      <input type="number" id="age" required>
+      <label>Course:</label>
+      <input type="text" id="course" required>
+      <button type="submit">Add Student</button>
+    </form>
+  </section>
+
+  <section id="list">
+    <h2>Student List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Name</th><th>Age</th><th>Course</th>
+        </tr>
+      </thead>
+      <tbody id="studentTable"></tbody>
+    </table>
+  </section>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
