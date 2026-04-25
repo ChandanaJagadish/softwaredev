@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login — TaskApp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome back 👋</h1>
+    <p class="error" id="error"></p>
+    <input type="email" id="email" placeholder="Email address" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p class="link">No account? <a href="register.html">Register here</a></p>
+  </div>
+
+  <script>
+    if (localStorage.getItem('token')) location.href = 'dashboard.html';
+
+    async function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const err = document.getElementById('error');
+
+      const res = await fetch('http://localhost:5000/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+      if (!res.ok) { err.style.display = 'block'; err.textContent = data.msg; return; }
+
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('name', data.name);
+      location.href = 'dashboard.html';
+    }
+  </script>
+</body>
+</html>
+
+
+
